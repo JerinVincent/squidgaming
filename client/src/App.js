@@ -8,7 +8,8 @@ function App() {
   const [phone, setPhone] = useState("");
 
   // ✅ Use your deployed backend URL
-  const BASE_URL = "https://squidgaming-1b7k.onrender.com";
+ const BASE_URL = "https://squidgaming-1.onrender.com";
+
 
   useEffect(() => {
     fetchSlots();
