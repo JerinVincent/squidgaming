@@ -6,28 +6,26 @@ require('dotenv').config();
 const slotRoutes = require('./routes/slotRoutes');
 
 const app = express();
+const PORT = process.env.PORT || 5000;
+
+// Middlewares
 app.use(cors());
 app.use(express.json());
 
-const PORT = process.env.PORT || 5000;
+// MongoDB Connection
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.error("MongoDB connection error:", err));
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => {
-  console.log("MongoDB connected");
-}).catch(err => {
-  console.log("Mongo error:", err);
+// Root Route for homepage
+app.get('/', (req, res) => {
+  res.send('🕹️ PS5 Slot Booking Backend is Running!');
 });
 
-// Routes
+// API Routes
 app.use('/api/slots', slotRoutes);
 
-app.get('/', (req, res) => {
-  res.send('API is running');
-});
-
+// Server Listener
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
