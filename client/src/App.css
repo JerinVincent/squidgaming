@@ -1,0 +1,67 @@
+body {
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  max-width: 700px;
+  margin: auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 40px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-section input {
+  padding: 10px;
+  margin: 5px;
+  width: 45%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.upi-section {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.qr {
+  width: 180px;
+  margin-top: 10px;
+  border: 2px solid #666;
+  border-radius: 10px;
+}
+
+.slot-list {
+  list-style: none;
+  padding: 0;
+}
+
+.slot-item {
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  background: #f1f3f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slot-item.booked {
+  background-color: #ffdddd;
+}
+
+.booked-label {
+  color: red;
+  font-weight: bold;
+}
